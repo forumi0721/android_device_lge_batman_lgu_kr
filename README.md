@@ -1,0 +1,1 @@
+android_device_lge_batman_lgu_kr
