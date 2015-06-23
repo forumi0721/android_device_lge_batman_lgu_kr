@@ -25,7 +25,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 2147483648
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_PREBUILT_KERNEL := device/lge/batman_lgu_kr/kernel
+TARGET_PREBUILT_KERNEL := device/lge/batman_lgu_kr/kernel-selinux
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 
@@ -38,7 +38,7 @@ else
 endif
 
 #target
-TARGET_KERNEL_SOURCE := kernel/lge/batman_lgu
+TARGET_KERNEL_SOURCE := kernel/lge/batman_lgu_kr
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.4.3
 TARGET_KERNEL_CONFIG := batman_lgu_defconfig
 

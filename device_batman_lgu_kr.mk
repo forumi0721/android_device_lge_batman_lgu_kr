@@ -9,7 +9,7 @@ DEVICE_PACKAGE_OVERLAYS += device/lge/batman_lgu_kr/overlay
 
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/lge/batman_lgu_kr/kernel
+	LOCAL_KERNEL := device/lge/batman_lgu_kr/kernel-selinux
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
