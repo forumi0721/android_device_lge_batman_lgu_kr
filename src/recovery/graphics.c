@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
+#include <stdbool.h>
 #include <stdlib.h>
 #include <unistd.h>
 
+#include <errno.h>
 #include <fcntl.h>
 #include <stdio.h>
 
@@ -30,10 +32,10 @@
 #include <pixelflinger/pixelflinger.h>
 #include <cutils/memory.h>
 
-#ifndef BOARD_LDPI_RECOVERY
-	#include "font_10x18.h"
+#ifdef BOARD_USE_CUSTOM_RECOVERY_FONT
+#include BOARD_USE_CUSTOM_RECOVERY_FONT
 #else
-	#include "font_7x16.h"
+#include "font_10x18.h"
 #endif
 
 #include "minui.h"
@@ -210,7 +212,7 @@ int gr_measure(const char *s)
     return gr_font->cwidth * strlen(s);
 }
 
-int gr_text(int x, int y, const char *s)
+int gr_text(int x, int y, const char *s, int bold)
 {
     GGLContext *gl = gr_context;
     GRFont *font = gr_font;
